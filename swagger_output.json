@@ -1,0 +1,59 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "TRANSLATE WORDS REST API",
+    "description": "REST API Para Traducir.",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "post": {
+        "tags": [
+          "Translate"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "Translation",
+            "in": "body",
+            "description": "Translate words.",
+            "schema": {
+              "$ref": "#/definitions/TranslationSchema"
+            }
+          }
+        ],
+        "responses": {}
+      }
+    }
+  },
+  "definitions": {
+    "TranslationSchema": {
+      "type": "object",
+      "properties": {
+        "words": {
+          "type": "object",
+          "properties": {
+            "wordToReplace": {
+              "type": "string",
+              "example": "replacement"
+            },
+            "wordToReplace2": {
+              "type": "string",
+              "example": "replacement"
+            }
+          }
+        },
+        "jsonPayload": {
+          "type": "object",
+          "properties": {}
+        }
+      }
+    }
+  }
+}
